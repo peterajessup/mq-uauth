@@ -1,7 +1,7 @@
 apiVersion: mq.ibm.com/v1beta1
 kind: QueueManager
 metadata:
-  name: mq1
+  name: mq-auth
   namespace: mq
 spec:
   securityContext:
@@ -42,18 +42,16 @@ spec:
         cpu: '1'
         memory: 2Gi
     name: QM1
+    ini:
+    - configMap
+        name: mq-ini
+        items:
+        - auth.ini
     mqsc:
     - configMap:
         name: mq1-mqsc
         items:
         - ivt.mqsc
-  template:
-    pod:
-      containers:
-        - env:
-            - name: MQSNOAUT
-              value: 'no'
-          name: qmgr
   version: 9.3.1.0-r1
   web:
     enabled: true
