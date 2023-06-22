@@ -16,5 +16,4 @@ oc create secret generic tls-eris-trust --from-file ./tls/CSQ9.crt
 oc create -f mqsc/mqsc.yaml
 oc create -f ini/authIni.yaml
 
-set -e
 oc create -f mqDeploy.yaml
