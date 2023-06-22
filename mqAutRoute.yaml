@@ -7,7 +7,7 @@ spec:
   host: tlsaut.chl.mq.ibm.com
   to:
     kind: Service
-    name: mq-aut-ibm-mq 
+    name: mq-auth-ibm-mq 
   port:
     targetPort: 1414
   tls:
