@@ -4,10 +4,10 @@ metadata:
   name: mq1route 
   namespace: mq 
 spec:
-  host: tls.chl.mq.ibm.com
+  host: tlsaut.chl.mq.ibm.com
   to:
     kind: Service
-    name: mq1-ibm-mq 
+    name: mq-aut-ibm-mq 
   port:
     targetPort: 1414
   tls:
