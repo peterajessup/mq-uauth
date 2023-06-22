@@ -17,20 +17,12 @@ spec:
     imagePullPolicy: Always
     storage:
       defaultClass: ibmc-block-gold
-      persistedData:
-        class: ibmc-file-gold-gid
-        enabled: true
-        type: persistent-claim
       queueManager:
-        type: persistent-claim
-      recoveryLogs:
-        class: ibmc-file-gold-gid
-        enabled: true
         type: persistent-claim
     availability:
       updateStrategy: RollingUpdate
-      type: MultiInstance
-      #type: SingleInstance
+      #type: MultiInstance
+      type: SingleInstance
       #type: NativeHA
     metrics:
       enabled: true
